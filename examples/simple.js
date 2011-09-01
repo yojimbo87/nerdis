@@ -23,6 +23,18 @@ var nerdis = new Nerdis({
 //list_range("mylist", 0, 1);
 //list_count("mylist");
 
+/*nerdis.queue("123").queue("456").queue("789", function aaa(result) {
+    util.log(JSON.stringify(result));
+});*/
+
+nerdis.keys.getAll("*").keys.getAll("*").queue("aaa", function(result) {
+    util.log(JSON.stringify(result));
+});
+
+nerdis.keys.getAll("*").queue("aaa", function(result) {
+    util.log(JSON.stringify(result));
+});
+
 /*------------------------------------------------------------------------------
   
   keys
