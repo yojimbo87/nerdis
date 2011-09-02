@@ -23,16 +23,7 @@ var nerdis = new Nerdis({
 //list_range("mylist", 0, 1);
 //list_count("mylist");
 
-nerdis
-    .keys.add("xxx", "valxxx")
-    .keys.add("mykey", "valmykey")
-    .keys.getAll("*")
-    .keys.get("mykey")
-    .keys.get("xxx")
-    .queue(function(err, results) {
-        util.log("results: " + JSON.stringify(results));
-    }
-);
+queue();
 
 /*------------------------------------------------------------------------------
   
@@ -165,4 +156,23 @@ function list_count(key) {
             console.log(res);
         }
     });
+}
+
+
+/*------------------------------------------------------------------------------
+  
+  queue
+  
+------------------------------------------------------------------------------*/
+function queue() {
+    nerdis
+        .keys.add("xxx", "valxxx")
+        .keys.add("mykey", "valmykey")
+        .keys.getAll("*")
+        .keys.get("mykey")
+        .keys.get("xxx")
+        .queue(function(err, results) {
+            util.log("results: " + JSON.stringify(results));
+        }
+    );
 }
