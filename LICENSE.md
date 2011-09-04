@@ -1,4 +1,4 @@
-The MIT X11 License covers libraries in the minotaur project. 
+The MIT X11 License covers libraries in this project. 
 Some third party libraries come from different projects, and
 are licensed under their own terms.
 
